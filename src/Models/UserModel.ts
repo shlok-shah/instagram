@@ -1,3 +1,4 @@
+//@ts-nocheck
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs"
 
@@ -23,6 +24,18 @@ const userSchema = new mongoose.Schema({
   lastName: {
     type: String,
     required: true
+  },
+  followers: {
+    type: [String],
+    default: []
+  },
+  following: {
+    type: [String],
+    default: []
+  },
+  posts: {
+    type: [String],
+    default: []
   },
   createdAt: {
     type: Date,
